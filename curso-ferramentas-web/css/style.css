@@ -1,0 +1,63 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(12, 1, 41);
+}
+
+.page-top{
+  height: 300px;
+  background-color: rgb(23, 148, 250);
+}
+
+.center{
+  width: 1200px;
+  margin: auto;
+}
+
+.titulo{
+  margin-top: -150px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 40px;
+}
+
+form{
+  margin-top: 45px;
+}
+
+input{
+  border-radius: 7px;
+  width: 1200px;
+  height: 50px;
+  background-color: rgb(117, 114, 114);
+}
+
+input::placeholder{
+  color: wheat;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.allTodo{
+  position: relative;
+  background-color: rgb(117, 114, 114);
+
+  height: 200px;
+  width: 1200px;
+
+  border-radius: 7px;
+
+  margin-top: 20px;
+}
+
+.allTodo p{
+  color: wheat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
