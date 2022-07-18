@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "name": "curso",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoDubal/curso-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoDubal/curso-js/issues"
+  },
+  "homepage": "https://github.com/BrunoDubal/curso-js#readme"
+}
