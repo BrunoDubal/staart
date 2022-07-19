@@ -26,7 +26,24 @@ body{
 }
 
 form{
+  display: flex;
   margin-top: 45px;
+}
+
+button{
+  margin-left: -30px;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 20px;
+}
+
+i{
+  color: aliceblue;
+  transform: rotate(45deg);
+}
+
+i:hover{
+  color: rgb(23, 148, 250);
 }
 
 input{
