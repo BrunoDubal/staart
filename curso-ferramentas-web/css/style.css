@@ -60,7 +60,6 @@ input::placeholder{
 }
 
 .allTodo{
-  position: relative;
   background-color: rgb(117, 114, 114);
 
   height: 200px;
@@ -71,10 +70,33 @@ input::placeholder{
   margin-top: 20px;
 }
 
-.allTodo p{
-  color: wheat;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.todo{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  background-color: rgb(90, 88, 88); 
+  border: 1px solid black; 
+  border-radius: 5px
+}
+
+.intodo{
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;  
+  gap: 10px;
+}
+
+.fa-circle{
+  font-size: 25px; 
+  padding: 10px;
+}
+
+.ptodo{
+  font-size: 1.5em;
+}
+
+.delButton{
+  font-size: 25px; 
+  padding: 10px; 
+  transform: rotate(90deg);
 }
