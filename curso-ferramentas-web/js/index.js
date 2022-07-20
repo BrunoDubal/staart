@@ -2,6 +2,7 @@ var allTodo = document.querySelector(".allTodo")
 var addButton = document.querySelector(".addButton")
 var newTodo = document.querySelector(".newTodo")
 
+
 function todo(e){
   if(newTodo.value == ''){
     alert('Por favor, descreva a tarefa.')
@@ -17,5 +18,6 @@ function todo(e){
 
   e.preventDefault();
 }
+
 
 addButton.addEventListener('click', todo)

@@ -76,7 +76,8 @@ input::placeholder{
   justify-content: space-between; 
   background-color: rgb(90, 88, 88); 
   border: 1px solid black; 
-  border-radius: 5px
+  border-radius: 5px;
+  height: 50px;
 }
 
 .intodo{
@@ -88,7 +89,7 @@ input::placeholder{
 
 .fa-circle{
   font-size: 25px; 
-  padding: 10px;
+  margin: 10px;
 }
 
 .ptodo{
@@ -97,6 +98,10 @@ input::placeholder{
 
 .delButton{
   font-size: 25px; 
-  padding: 10px; 
+  margin: 10px; 
   transform: rotate(90deg);
+}
+
+.none{
+  display: none;
 }
