@@ -27,20 +27,42 @@ function renderTodoItem(todo){
       </div>
       <p class="text-gray-400 ml-4 ${isChecked ? "line-through" : ""}">${
   todo.text
-}</p>
-    </div>
-    <button
-      class="bg-transparent hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-full hover:text-red-500"
-    >
-      <i class="remove-task fas fa-times text-2xl"></i>
-    </button>
-  </li>
-`;
+  }</p>
+      </div>
+      <button
+        class="bg-transparent hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-full hover:text-red-500"
+      >
+        <i class="remove-task fas fa-times text-2xl"></i>
+      </button>
+    </li>
+  `;
 
-node.innerHTML = todoTemplate
-return node
+  node.innerHTML = todoTemplate
+  return node
+}
+
+function handleFormSubmit(event){
+  event.preventDefault()
+
+  const input = document.querySelector("todo-input")
+  const text = input.value.trim()
+
+  if(text){
+    addTodo(text)
+    input.value = ""
+    input.focus()
+  }
+}
+
+function addTodo(text){
+  const todo = { text, checked: false, id: Date.now()}
+  todoItems.push(todo)
+  renderTodoList()
 }
 
 window.onload = () => {
+  const form = document.querySelector("#todo-form")
+  form.addEventListener('submit', handleFormSubmit)
+  
   renderTodoList()
 }
