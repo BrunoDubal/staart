@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do It</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://kit.fontawesome.com/2be242c47c.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="page-top"></div>
-  
-  <div class="center">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do It</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2be242c47c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="page-top"></div>
+
+    <div class="center">
       <div class="titulo">
         <h1>📚 Estudos</h1>
         <p>Minha lista pessoal de estudos</p>
       </div>
       <div>
         <form>
-          <input placeholder="Adicionar tarefa..." type="text" class="newTodo">
-          <button class="addTodo">
-            <i class="fa-solid fa-xmark addButton"></i>          
-          </button>        
+          <input
+            placeholder="Adicionar tarefa..."
+            type="text"
+            class="newTodo"
+          />
+          <button type="submit" class="addTodo">
+            <i class="fa-solid fa-xmark addButton"></i>
+          </button>
         </form>
       </div>
-      <div class="allTodo"></div>
-  </div>
-  <script src="js/index.js"></script>
-</body>
+      <div class="list">
+        <ul class="todo all"></ul>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
 </html>
