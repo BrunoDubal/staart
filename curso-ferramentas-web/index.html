@@ -13,28 +13,57 @@
   </head>
 
   <body>
-    <div class="page-top"></div>
-
-    <div class="center">
-      <div class="titulo">
-        <h1>📚 Estudos</h1>
-        <p>Minha lista pessoal de estudos</p>
-      </div>
-      <div>
-        <form>
-          <input
-            placeholder="Adicionar tarefa..."
-            type="text"
-            class="newTodo"
-          />
-          <button type="submit" class="addTodo">
-            <i class="fa-solid fa-xmark addButton"></i>
-          </button>
-        </form>
-      </div>
-      <div class="list">
-        <ul class="todos all"></ul>
-      </div>
-    </div>
+   <!-- banner  300px height-->
+   <div style="height: 300px" class="flex justify-center -mb-32 bg-blue-500 bg-top bg-no-repeat bg-cover"></div>
+   <div class="m-auto w-4/5 md:px-2">
+     <div class="flex justify-between items-center p-0 bg-transparent">
+       <div class="">
+         <h1 class="text-4xl font-bold text-white">📚 Estudos</h1>
+         <!-- description -->
+         <p class="text-xl text-white">Minha lista pessoal de estudos.</p>
+       </div>
+     </div>
+     <main class="mt-4">
+       <div class="my-8">
+         <form id="todo-form">
+           <div class="flex gap-8 justify-between items-center p-2 bg-gray-700 rounded-lg">
+             <div class="flex-1">
+               <input class="py-2 px-4 w-full text-white bg-transparent border-none focus:outline-0" type="text"
+                 placeholder="Adicionar tarefa..." id="todo-input" />
+             </div>
+             <button type="submit"
+               class="py-2 px-4 font-semibold text-white bg-transparent rounded-full hover:text-blue-500 hover:bg-gray-700">
+               <i class="text-xl fas fa-plus"></i>
+             </button>
+           </div>
+         </form>
+       </div>
+ 
+       <!-- List of tasks -->
+       <div class="my-4 bg-gray-700 rounded-lg list">
+           <!-- filters all active completed -->
+           <div class="flex justify-between gap-between-2">
+             <!-- All tasks  text-->
+             <a href="#" class="mx-2 text-blue-500 hover:text-blue-400 filter-all">
+               Todas
+             </a>
+             <!-- active  -->
+             <a href="#" class="mx-2 text-blue-500 hover:text-blue-400 filter-active">
+               A fazer
+             </a>
+             <!-- completed -->
+             <a href="#" class="mx-2 text-blue-500 hover:text-blue-400 filter-completed">
+               Completas
+             </a>
+           </div>
+ 
+           <!-- clear completed -->
+           <a href="#" class="text-blue-500 hover:text-blue-400 clear-completed">
+             Limpar
+           </a>
+         </div>
+       </div>
+     </main>
+   </div>
   </body>
 </html>
