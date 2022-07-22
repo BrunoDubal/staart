@@ -40,3 +40,7 @@ function renderTodoItem(todo){
 node.innerHTML = todoTemplate
 return node
 }
+
+window.onload = () => {
+  renderTodoList()
+}
