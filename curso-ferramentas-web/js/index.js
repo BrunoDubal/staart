@@ -44,7 +44,7 @@ function renderTodoItem(todo){
 function handleFormSubmit(event){
   event.preventDefault()
 
-  const input = document.querySelector("todo-input")
+  const input = document.querySelector("#todo-input")
   const text = input.value.trim()
 
   if(text){
@@ -60,9 +60,39 @@ function addTodo(text){
   renderTodoList()
 }
 
+function filterTodos(filter){
+  const items = todoItems.filter((todo) => {
+    switch(filter){
+      case "all":
+        return true;
+      case "completed":
+        return todo.checked;
+      case "active":
+        return !todo.checked;
+    }
+  })
+  renderTodoList(items)
+}
+
+function clearAllCompleted(){
+  todoItems = todoItems.filter((todo) => {!todo.checked})
+  renderTodoList()
+}
+
 window.onload = () => {
   const form = document.querySelector("#todo-form")
+
+  const filterAll = document.querySelector(".filter-all")
+  const filterActive = document.querySelector(".filter-active")
+  const filterCompleted = document.querySelector(".filter-completed")
+  const clearCompleted = document.querySelector(".clear-completed")
+
+
+  filterAll.addEventListener('click', () => {filterTodos("all")})
+  filterActive.addEventListener('click', () => {filterTodos("active")})
+  filterCompleted.addEventListener('click', () => {filterTodos("completed")})
+  clearCompleted.addEventListener('click', () => {clearAllCompleted()})
   form.addEventListener('submit', handleFormSubmit)
-  
+
   renderTodoList()
 }
