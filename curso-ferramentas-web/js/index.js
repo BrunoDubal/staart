@@ -79,6 +79,38 @@ function clearAllCompleted(){
   renderTodoList()
 }
 
+function handleTodoClick(e){
+  const classList = e.target.classList
+
+  if(classList.contains('remove-task')){
+    const id = 
+    e.target.parentElement.parentElement.parentElement.getAttribute('data-key')
+    removeTodo(parseInt(id))
+  }
+  if(classList.contains('toggle-task')){
+    const id = 
+    e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-key')
+    toggleDone(parseInt(id))
+  }
+}
+
+function removeTodo(id){
+  const todo = findTodoById(id)
+  const index = todoItems.indexOf(todo)
+  todoItems.splice(index, 1)
+  renderTodoList()
+}
+
+function toggleDone(id){
+  const todo = findTodoById(id)
+  todo.checked = !todo.checked
+  renderTodoList()
+}
+
+function findTodoById(id){
+  return todoItems.find((todo) => todo.id === id)
+}
+
 window.onload = () => {
   const form = document.querySelector("#todo-form")
 
@@ -86,6 +118,7 @@ window.onload = () => {
   const filterActive = document.querySelector(".filter-active")
   const filterCompleted = document.querySelector(".filter-completed")
   const clearCompleted = document.querySelector(".clear-completed")
+  const items = document.querySelector('.todos')
 
 
   filterAll.addEventListener('click', () => {filterTodos("all")})
@@ -93,6 +126,7 @@ window.onload = () => {
   filterCompleted.addEventListener('click', () => {filterTodos("completed")})
   clearCompleted.addEventListener('click', () => {clearAllCompleted()})
   form.addEventListener('submit', handleFormSubmit)
+  items.addEventListener('click', handleTodoClick)
 
   renderTodoList()
 }
