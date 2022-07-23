@@ -1,6 +1,5 @@
-var todoItems = [
-  {text: "Estudar jornada front-end", checked: true, id: 1}
-]
+var todoItems = []
+
 
 function renderTodoList(items = todoItems){
   const todoList = document.querySelector('.todos')
@@ -8,6 +7,7 @@ function renderTodoList(items = todoItems){
   items.forEach((todo) => {
     todoList.appendChild(renderTodoItem(todo))
   })
+  completedTodo()
 }
 
 function renderTodoItem(todo){
@@ -111,6 +111,14 @@ function findTodoById(id){
   return todoItems.find((todo) => todo.id === id)
 }
 
+function completedTodo(){
+  const count = document.querySelector('.completed-count')
+  const completedCount = todoItems.filter((todo) => todo.checked).length
+
+  count.innerHTML = `${completedCount}/${todoItems.length}`
+  return count
+}
+
 window.onload = () => {
   const form = document.querySelector("#todo-form")
 
@@ -118,7 +126,7 @@ window.onload = () => {
   const filterActive = document.querySelector(".filter-active")
   const filterCompleted = document.querySelector(".filter-completed")
   const clearCompleted = document.querySelector(".clear-completed")
-  const items = document.querySelector('.todos')
+  const items = document.querySelector(".todos")
 
 
   filterAll.addEventListener('click', () => {filterTodos("all")})
@@ -127,6 +135,7 @@ window.onload = () => {
   clearCompleted.addEventListener('click', () => {clearAllCompleted()})
   form.addEventListener('submit', handleFormSubmit)
   items.addEventListener('click', handleTodoClick)
+
 
   renderTodoList()
 }
