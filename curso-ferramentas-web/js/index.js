@@ -1,19 +1,19 @@
-var todoItems = []
+var todoItems = [];
 
 
 function renderTodoList(items = todoItems){
-  const todoList = document.querySelector('.todos')
-  todoList.innerHTML = ''
+  const todoList = document.querySelector('.todos');
+  todoList.innerHTML = '';
   items.forEach((todo) => {
     todoList.appendChild(renderTodoItem(todo))
-  })
-  completedTodo()
+  });
+  completedTodo();
 }
 
 function renderTodoItem(todo){
   const isChecked = todo.checked
-  const node = document.createElement("li")
-  node.setAttribute('data-key', todo.id)
+  const node = document.createElement("li");
+  node.setAttribute('data-key', todo.id);
 
   const todoTemplate = `
   <li class="todo cursor-move p-2 flex justify-between items-center my-2">
@@ -37,28 +37,28 @@ function renderTodoItem(todo){
     </li>
   `;
 
-  node.innerHTML = todoTemplate
-  return node
+  node.innerHTML = todoTemplate;
+  return node;
 }
 
 function handleFormSubmit(event){
-  event.preventDefault()
+  event.preventDefault();
 
-  const input = document.querySelector("#todo-input")
-  const text = input.value.trim()
+  const input = document.querySelector("#todo-input");
+  const text = input.value.trim();
 
   if(text){
-    addTodo(text)
-    input.value = ""
-    input.focus()
-  }
-}
+    addTodo(text);
+    input.value = "";
+    input.focus();
+  };
+};
 
 function addTodo(text){
-  const todo = { text, checked: false, id: Date.now()}
-  todoItems.push(todo)
-  renderTodoList()
-}
+  const todo = { text, checked: false, id: Date.now()};
+  todoItems.push(todo);
+  renderTodoList();
+};
 
 function filterTodos(filter){
   const items = todoItems.filter((todo) => {
@@ -69,73 +69,73 @@ function filterTodos(filter){
         return todo.checked;
       case "active":
         return !todo.checked;
-    }
-  })
-  renderTodoList(items)
-}
+    };
+  });
+  renderTodoList(items);
+};
 
 function clearAllCompleted(){
-  todoItems = todoItems.filter((todo) => {!todo.checked})
-  renderTodoList()
-}
+  todoItems = todoItems.filter((todo) => {!todo.checked});
+  renderTodoList();
+};
 
 function handleTodoClick(e){
-  const classList = e.target.classList
+  const classList = e.target.classList;
 
   if(classList.contains('remove-task')){
     const id = 
-    e.target.parentElement.parentElement.parentElement.getAttribute('data-key')
-    removeTodo(parseInt(id))
-  }
+    e.target.parentElement.parentElement.parentElement.getAttribute('data-key');
+    removeTodo(parseInt(id));
+  };
   if(classList.contains('toggle-task')){
     const id = 
-    e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-key')
-    toggleDone(parseInt(id))
-  }
-}
+    e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-key');
+    toggleDone(parseInt(id));
+  };
+};
 
 function removeTodo(id){
-  const todo = findTodoById(id)
-  const index = todoItems.indexOf(todo)
-  todoItems.splice(index, 1)
-  renderTodoList()
-}
+  const todo = findTodoById(id);
+  const index = todoItems.indexOf(todo);
+  todoItems.splice(index, 1);
+  renderTodoList();
+};
 
 function toggleDone(id){
-  const todo = findTodoById(id)
-  todo.checked = !todo.checked
-  renderTodoList()
-}
+  const todo = findTodoById(id);
+  todo.checked = !todo.checked;
+  renderTodoList();
+};
 
 function findTodoById(id){
-  return todoItems.find((todo) => todo.id === id)
-}
+  return todoItems.find((todo) => todo.id === id);
+};
 
 function completedTodo(){
-  const count = document.querySelector('.completed-count')
-  const completedCount = todoItems.filter((todo) => todo.checked).length
+  const count = document.querySelector('.completed-count');
+  const completedCount = todoItems.filter((todo) => todo.checked).length;
 
-  count.innerHTML = `${completedCount}/${todoItems.length}`
-  return count
-}
+  count.innerHTML = `${completedCount}/${todoItems.length}`;
+  return count;
+};
 
 window.onload = () => {
-  const form = document.querySelector("#todo-form")
+  const form = document.querySelector("#todo-form");
 
-  const filterAll = document.querySelector(".filter-all")
-  const filterActive = document.querySelector(".filter-active")
-  const filterCompleted = document.querySelector(".filter-completed")
-  const clearCompleted = document.querySelector(".clear-completed")
-  const items = document.querySelector(".todos")
-
-
-  filterAll.addEventListener('click', () => {filterTodos("all")})
-  filterActive.addEventListener('click', () => {filterTodos("active")})
-  filterCompleted.addEventListener('click', () => {filterTodos("completed")})
-  clearCompleted.addEventListener('click', () => {clearAllCompleted()})
-  form.addEventListener('submit', handleFormSubmit)
-  items.addEventListener('click', handleTodoClick)
+  const filterAll = document.querySelector(".filter-all");
+  const filterActive = document.querySelector(".filter-active");
+  const filterCompleted = document.querySelector(".filter-completed");
+  const clearCompleted = document.querySelector(".clear-completed");
+  const items = document.querySelector(".todos");
 
 
-  renderTodoList()
-}
+  filterAll.addEventListener('click', () => {filterTodos("all")});
+  filterActive.addEventListener('click', () => {filterTodos("active")});
+  filterCompleted.addEventListener('click', () => {filterTodos("completed")});
+  clearCompleted.addEventListener('click', () => {clearAllCompleted()});
+  form.addEventListener('submit', handleFormSubmit);
+  items.addEventListener('click', handleTodoClick);
+
+
+  renderTodoList();
+};
