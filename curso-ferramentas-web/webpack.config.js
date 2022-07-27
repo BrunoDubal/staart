@@ -1,6 +1,20 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
+const babelLoader = {
+  test: /\.js$/,
+  exclude: /(node_modules)/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"],
+      targets: {
+        browsers: ["last 2 versions", "not ie 11"],
+      },
+    },
+  },
+};
+
 module.exports = {
   entry: "./js/index.js",
   output: {
@@ -14,5 +28,7 @@ module.exports = {
       filename: "index.html"
     })
   ],
-  module: {},
+  module: {
+    rules: [babelLoader],
+  },
 };
