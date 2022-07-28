@@ -1,5 +1,6 @@
-var todoItems = [];
+import "./style.css";
 
+var todoItems = [];
 
 function renderTodoList(items = todoItems){
   const todoList = document.querySelector('.todos');
