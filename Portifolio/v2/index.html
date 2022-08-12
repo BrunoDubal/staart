@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/2be242c47c.js" crossorigin="anonymous"></script>
     <title>Portifólio</title>
   </head>
   <body>
     <header>
-      <a href="#">Sobre</a>
-      <a href="#">Projetos</a>
-      <a href="#">Contato</a>
+      <nav>
+        <a href="#">Sobre</a>
+        <a href="#">Projetos</a>
+        <a href="#">Contato</a>
+      </nav>
     </header>
 
     <main>
       <div class="apresentacao">
         <div class="img">
-          <img src="image/perfil.jpg" alt="perfil" />
+          <img class="img-apresentacao" src="image/perfil.jpg" alt="perfil" />
         </div>
 
         <div class="text-apresentacao">
@@ -34,17 +37,19 @@
       </div>
 
       <div class="about">
-        <h2>Sobre mim</h2>
-        <p>
-          A tecnologia me fascina e por isso eu busco aprender para futuramente
-          ensinar e desenvolver em alta performance, alcançando um padrão de
-          excelencia e sendo reconhecido na area por outros profissionais.
-        </p>
+        <div class="text-about">
+          <h2>Sobre mim</h2>
+          <p>
+            Sou um estudante de analise e desenvolvimento de sistema há 1 ano e a tecnologia me fascina, por isso eu busco aprender para futuramente
+            ensinar e desenvolver em alta performance, alcançando um padrão de
+            excelencia e sendo reconhecido na area por outros profissionais.
+          </p>
+        </div>
       </div>
 
       <div class="projetos">
         <h2>Projetos</h2>
-        <div>
+        <div class="proj">
           <div class="img-proj"></div>
           <div class="text-proj">
             <h3>
@@ -56,7 +61,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="proj">
           <div class="img-proj"></div>
           <div class="text-proj">
             <h3>
@@ -68,7 +73,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="proj">
           <div class="img-proj"></div>
           <div class="text-proj">
             <h3>
@@ -80,7 +85,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="proj">
           <div class="img-proj"></div>
           <div class="text-proj">
             <h3>
@@ -95,19 +100,20 @@
     </main>
 
     <footer>
-      <a href="">
-        <img src="" alt="" />
-      </a>
-
-      <a href="">
-        <img src="" alt="" />
-      </a>
-
-      <a href="">
-        <img src="" alt="" />
-      </a>
-
-      <p>Feito com &#x2764; por Bruno D. Hoffmann</p>
+      <div class="footer">
+        <div class="social">
+          <a href="#">
+            <i class="fa-brands fa-square-github fa-6x"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-linkedin fa-6x"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-instagram fa-6x"></i>
+          </a>
+        </div>
+        <p>Feito com &#x2764; por Bruno D. Hoffmann</p>
+      </div>
     </footer>
   </body>
 </html>

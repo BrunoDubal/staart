@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{
+  box-sizing: border-box;
+
+  background-color: rgb(10, 8, 39);
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 62.5%;
+  color: white;
+  font-family: 'Poppins', sans-serif;;
+}
+
+nav{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 2.5rem;
+
+  margin: 10px;
+  margin-right: 50px;
+  font-size: 1.8rem;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+p{
+  font-size: 1.6rem;
+}
+
+.apresentacao{
+  display: flex;
+  flex-direction: row;
+  gap: 9.0rem;
+  justify-content: center;
+  margin-top: 8.0rem;
+}
+
+.img-apresentacao{
+  border-radius: 50%;
+}
+
+.text-apresentacao{
+  width: 60.0rem;
+}
+
+.text-apresentacao h1{
+  font-size: 3.2rem;
+}
+
+.text-apresentacao button{
+  width: 18.0rem;
+  height: 3.7rem;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  background-color: rgb(20, 100, 248);
+}
+
+.about{
+  background-color: rgb(23, 22, 56);
+  margin: 8.0rem -0.7rem;
+}
+
+.text-about{
+  display: flex;
+  flex-direction: column;
+  width: 90.0rem;
+  margin: auto;
+  padding: 2.0rem;
+}
+
+.text-about h2{
+  font-size: 3.2rem;
+}
+
+.text-about p{
+  line-height: 4.0rem;
+}
+
+.projetos{
+  display: flex;
+  flex-direction: column;
+  width: 90.0rem;
+  margin: auto;
+}
+
+.img-proj{
+  height: 15.0rem;
+  width: 15.0rem;
+  background-color: rgb(173, 169, 163);
+}
+
+.projetos h2{
+  font-size: 3.2rem;
+}
+
+.projetos h3{
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.projetos p{
+  width: 70.0rem;
+  font-size: 1.6rem;
+  line-height: 4.0rem;
+}
+
+.proj{
+  display: flex;
+  flex-direction: row;
+  gap: 3.0rem;
+  height: 15rem;
+  margin-bottom: 12.0rem;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social{
+  display: flex;
+  gap: 2.0rem;
+}
